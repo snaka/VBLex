@@ -46,17 +46,17 @@ Token自身のテキストをあらわすTextプロパティを持ちます。
 
 Typeの数値の意味は以下のようになってます。
 <pre><code>#define TkBLANK         1
-#define TkNL            2
-#define TkOP            3
-#define TkPUNC          4
-#define TkSTRING        5
-#define TkSTMT          6
-#define TkKEYW          7
-#define TkVB            8
-#define TkIDENT         9
-#define TkDIGIT         10
-#define TkCOMMENT       11
-#define TkOTHER         99
+#define TkNL            2 //改行
+#define TkOP            3  //演算子
+#define TkPUNC          4  //括弧やカンマ記号など
+#define TkSTRING        5  //文字列
+#define TkSTMT          6  //ステートメント
+#define TkKEYW          7  //キーワード
+#define TkVB            8  // VB内部で使用しているキーワード(frm, cls ファイルのプロパティなど)
+#define TkIDENT         9  // 識別子(変数名, 関数名など)
+#define TkDIGIT         10  // 数字
+#define TkCOMMENT       11  // コメント
+#define TkOTHER         99  // 上記以外
 </code></pre>
 
 ## ライセンス
