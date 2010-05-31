@@ -1,0 +1,10 @@
+; VBLex.def : モジュール パラメータを宣言します。
+
+LIBRARY      "VBLex.DLL"
+
+EXPORTS
+	DllCanUnloadNow		PRIVATE
+	DllGetClassObject	PRIVATE
+	DllRegisterServer	PRIVATE
+	DllUnregisterServer	PRIVATE
+	DllInstall		PRIVATE

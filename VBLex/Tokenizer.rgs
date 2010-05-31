@@ -1,0 +1,26 @@
+HKCR
+{
+	VBLex.Tokenizer.1 = s 'Tokenizer Class'
+	{
+		CLSID = s '{354E049F-07D9-40F0-B3D0-2B831C3B1205}'
+	}
+	VBLex.Tokenizer = s 'Tokenizer Class'
+	{
+		CLSID = s '{354E049F-07D9-40F0-B3D0-2B831C3B1205}'
+		CurVer = s 'VBLex.Tokenizer.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {354E049F-07D9-40F0-B3D0-2B831C3B1205} = s 'Tokenizer Class'
+		{
+			ProgID = s 'VBLex.Tokenizer.1'
+			VersionIndependentProgID = s 'VBLex.Tokenizer'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{2650EDFA-2516-4B6C-A5C5-ACB7D508FABF}'
+		}
+	}
+}

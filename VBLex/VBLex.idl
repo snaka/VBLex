@@ -1,0 +1,109 @@
+// VBLex.idl : VBLex の IDL ソース
+//
+
+// このファイルは、タイプ ライブラリ (VBLex.tlb) およびマーシャリング コードを
+// 作成するために MIDL ツールによって処理されます。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(96C91639-35F1-43D0-BB4F-06CE04135162),
+	dual,
+	nonextensible,
+	helpstring("ITokenizer Interface"),
+	pointer_default(unique)
+]
+interface ITokenizer : IDispatch{
+	
+	[propget, id(1), helpstring("Property SourceText")]
+	HRESULT SourceText([out, retval] BSTR* pVal);
+	
+	[propput, id(1), helpstring("Property SourceText")]
+	HRESULT SourceText([in] BSTR newVal);
+	
+	[propget, id(2), helpstring("Property Tokens")]
+	HRESULT Tokens([out, retval] LPDISPATCH* pVal);
+
+	[propget, id(3), helpstring("Property Version")] HRESULT Version([out, retval] BSTR* pVal);
+};
+[
+	object,
+	uuid(3207DF5C-B2F0-4A5C-845C-A18868942DBC),
+	dual,
+	nonextensible,
+	helpstring("IToken Interface"),
+	pointer_default(unique)
+]
+interface IToken : IDispatch{
+
+	[propget, id(1), helpstring("Property Text")]
+	HRESULT Text([out, retval] BSTR* pVal);
+	
+	[propput, id(1), helpstring("Property Text")]
+	HRESULT Text([in] BSTR newVal);
+	
+	[propget, id(2), helpstring("Property Type")]
+	HRESULT Type([out, retval] LONG* pVal);
+
+	[propput, id(2), helpstring("Property Type")]
+	HRESULT Type([in] LONG newVal);
+
+	[id(3), helpstring("Method Init")]
+	HRESULT Init([in] BSTR text, [in] LONG type);
+};
+[
+	object,
+	uuid(69FBF5BC-B607-465A-BB5C-4FE323761111),
+	dual,
+	nonextensible,
+	helpstring("ITokens インターフェイス"),
+	pointer_default(unique)
+]
+interface ITokens : IDispatch{
+	[id(0), helpstring("メソッド Item")]
+	HRESULT Item([in] VARIANT Index, [out, retval] VARIANT* pItem);
+	
+	[propget, id(1), helpstring("プロパティ Count")]
+	HRESULT Count([out, retval] LONG* pVal);
+	
+	[id(2), helpstring("Method Add")]
+	HRESULT Add([in] IToken* pToken);
+
+	[propget, id(-4), helpstring("プロパティ _NewEnum"), restricted]
+	HRESULT _NewEnum([out, retval] LPUNKNOWN* pVal);
+};
+[
+	uuid(2650EDFA-2516-4B6C-A5C5-ACB7D508FABF),
+	version(1.0),
+	helpstring("VBLex 1.0 Type library")
+]
+library VBLexLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(354E049F-07D9-40F0-B3D0-2B831C3B1205),
+		helpstring("Tokenizer Class")
+	]
+	coclass Tokenizer
+	{
+		[default] interface ITokenizer;
+	};
+	[
+		uuid(4BE67AD1-0498-47A2-AE04-9534424AA3C6),
+		helpstring("Token Class")
+	]
+	coclass Token
+	{
+		[default] interface IToken;
+	};
+	[
+		uuid(45E01B49-77D1-4B1E-8D53-DB8EF4865692),
+		helpstring("Tokens Class")
+	]
+	coclass Tokens
+	{
+		[default] interface ITokens;
+	};
+};

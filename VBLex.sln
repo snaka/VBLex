@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VBLex", "VBLex\VBLex.vcproj", "{0E6639E9-C232-4362-8EC6-B27549B1F885}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VBLexPS", "VBLex\VBLexPS.vcproj", "{33526DFF-3897-472A-979D-59A06E1489EE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0E6639E9-C232-4362-8EC6-B27549B1F885} = {0E6639E9-C232-4362-8EC6-B27549B1F885}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E6639E9-C232-4362-8EC6-B27549B1F885}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0E6639E9-C232-4362-8EC6-B27549B1F885}.Debug|Win32.Build.0 = Debug|Win32
+		{0E6639E9-C232-4362-8EC6-B27549B1F885}.Release|Win32.ActiveCfg = Release|Win32
+		{0E6639E9-C232-4362-8EC6-B27549B1F885}.Release|Win32.Build.0 = Release|Win32
+		{33526DFF-3897-472A-979D-59A06E1489EE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{33526DFF-3897-472A-979D-59A06E1489EE}.Release|Win32.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

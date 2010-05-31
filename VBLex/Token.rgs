@@ -1,0 +1,26 @@
+HKCR
+{
+	VBLex.Token.1 = s 'Token Class'
+	{
+		CLSID = s '{4BE67AD1-0498-47A2-AE04-9534424AA3C6}'
+	}
+	VBLex.Token = s 'Token Class'
+	{
+		CLSID = s '{4BE67AD1-0498-47A2-AE04-9534424AA3C6}'
+		CurVer = s 'VBLex.Token.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {4BE67AD1-0498-47A2-AE04-9534424AA3C6} = s 'Token Class'
+		{
+			ProgID = s 'VBLex.Token.1'
+			VersionIndependentProgID = s 'VBLex.Token'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{2650EDFA-2516-4B6C-A5C5-ACB7D508FABF}'
+		}
+	}
+}
