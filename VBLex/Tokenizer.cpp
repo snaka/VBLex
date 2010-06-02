@@ -6,7 +6,7 @@
 #include "Tokenizer.h"
 #include "Token.h"
 #include "FlexLexer.h"
-#include "vblexDefs.h"
+//#include "vblexDefs.h"
 
 // CTokenizer
 

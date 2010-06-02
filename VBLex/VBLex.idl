@@ -58,20 +58,20 @@ interface IToken : IDispatch{
 	uuid(69FBF5BC-B607-465A-BB5C-4FE323761111),
 	dual,
 	nonextensible,
-	helpstring("ITokens インターフェイス"),
+	helpstring("ITokens Interface"),
 	pointer_default(unique)
 ]
 interface ITokens : IDispatch{
-	[id(0), helpstring("メソッド Item")]
+	[id(0), helpstring("Method Item")]
 	HRESULT Item([in] VARIANT Index, [out, retval] VARIANT* pItem);
 	
-	[propget, id(1), helpstring("プロパティ Count")]
+	[propget, id(1), helpstring("Property Count")]
 	HRESULT Count([out, retval] LONG* pVal);
 	
 	[id(2), helpstring("Method Add")]
 	HRESULT Add([in] IToken* pToken);
 
-	[propget, id(-4), helpstring("プロパティ _NewEnum"), restricted]
+	[propget, id(-4), helpstring("Property _NewEnum"), restricted]
 	HRESULT _NewEnum([out, retval] LPUNKNOWN* pVal);
 };
 [
@@ -106,4 +106,7 @@ library VBLexLib
 	{
 		[default] interface ITokens;
 	};
+
+#include "vblexDefs.h"
+
 };

@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0500 */
-/* at Wed Jun 02 00:29:39 2010
+/* at Thu Jun 03 00:10:46 2010
  */
 /* Compiler settings for .\VBLex.idl:
     Oicf, W1, Zp8, env=Win32 (32b run)
@@ -582,6 +582,21 @@ EXTERN_C const IID IID_ITokens;
 /* library VBLexLib */
 /* [helpstring][version][uuid] */ 
 
+
+enum VBLexTokenTypes
+    {	TkBLANK	= 1,
+	TkNL	= ( TkBLANK + 1 ) ,
+	TkOP	= ( TkNL + 1 ) ,
+	TkPUNC	= ( TkOP + 1 ) ,
+	TkSTRING	= ( TkPUNC + 1 ) ,
+	TkSTMT	= ( TkSTRING + 1 ) ,
+	TkKEYW	= ( TkSTMT + 1 ) ,
+	TkVB	= ( TkKEYW + 1 ) ,
+	TkIDENT	= ( TkVB + 1 ) ,
+	TkDIGIT	= ( TkIDENT + 1 ) ,
+	TkCOMMENT	= ( TkDIGIT + 1 ) ,
+	TkOTHER	= ( TkCOMMENT + 1 ) 
+    } ;
 
 EXTERN_C const IID LIBID_VBLexLib;
 

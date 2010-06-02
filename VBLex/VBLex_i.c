@@ -6,7 +6,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0500 */
-/* at Wed Jun 02 00:29:39 2010
+/* at Thu Jun 03 00:10:46 2010
  */
 /* Compiler settings for .\VBLex.idl:
     Oicf, W1, Zp8, env=Win32 (32b run)

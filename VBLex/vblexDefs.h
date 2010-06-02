@@ -1,3 +1,4 @@
+/*
 #define TkBLANK         1
 #define TkNL            2
 #define TkOP            3
@@ -10,4 +11,19 @@
 #define TkDIGIT         10
 #define TkCOMMENT       11
 #define TkOTHER         99
+*/
 
+enum VBLexTokenTypes {
+	TkBLANK = 1,
+	TkNL,
+	TkOP,
+	TkPUNC,
+	TkSTRING,
+	TkSTMT,
+	TkKEYW,
+	TkVB,
+	TkIDENT,
+	TkDIGIT,
+	TkCOMMENT,
+	TkOTHER
+};
