@@ -1,29 +1,18 @@
-/*
-#define TkBLANK         1
-#define TkNL            2
-#define TkOP            3
-#define TkPUNC          4
-#define TkSTRING        5
-#define TkSTMT          6
-#define TkKEYW          7
-#define TkVB            8
-#define TkIDENT         9
-#define TkDIGIT         10
-#define TkCOMMENT       11
-#define TkOTHER         99
-*/
 
 enum VBLexTokenTypes {
-	TkBLANK = 1,
-	TkNL,
-	TkOP,
-	TkPUNC,
-	TkSTRING,
-	TkSTMT,
-	TkKEYW,
-	TkVB,
-	TkIDENT,
-	TkDIGIT,
-	TkCOMMENT,
-	TkOTHER
+	TkBLANK = 1,		// 空白
+	TkNL,				// 改行
+	TkOP,				// 演算子
+	TkPUNC,				// 約物（カンマ，ピリオド，かっこなど…）
+	TkSTRING,			// 文字列
+	TkSTMT,				// ステートメント
+	TkKEYW,				// キーワード
+	TkCOND,				// 条件分岐のステートメント
+	TkPROC,				// プロシージャの開始ステートメント
+	TkENDPROC,			// プロシージャの終了ステートメント
+	TkVB,				// cls,frmファイル内部で使用しているキーワード
+	TkIDENT,			// 識別子（変数名，プロシージャ名など）
+	TkDIGIT,			// 数字
+	TkCOMMENT,			// コメント
+	TkOTHER				// その他
 };

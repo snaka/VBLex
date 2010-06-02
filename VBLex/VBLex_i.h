@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0500 */
-/* at Thu Jun 03 00:10:46 2010
+/* at Thu Jun 03 01:25:24 2010
  */
 /* Compiler settings for .\VBLex.idl:
     Oicf, W1, Zp8, env=Win32 (32b run)
@@ -591,7 +591,10 @@ enum VBLexTokenTypes
 	TkSTRING	= ( TkPUNC + 1 ) ,
 	TkSTMT	= ( TkSTRING + 1 ) ,
 	TkKEYW	= ( TkSTMT + 1 ) ,
-	TkVB	= ( TkKEYW + 1 ) ,
+	TkCOND	= ( TkKEYW + 1 ) ,
+	TkPROC	= ( TkCOND + 1 ) ,
+	TkENDPROC	= ( TkPROC + 1 ) ,
+	TkVB	= ( TkENDPROC + 1 ) ,
 	TkIDENT	= ( TkVB + 1 ) ,
 	TkDIGIT	= ( TkIDENT + 1 ) ,
 	TkCOMMENT	= ( TkDIGIT + 1 ) ,

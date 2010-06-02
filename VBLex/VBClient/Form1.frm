@@ -27,14 +27,29 @@ Private Sub Command1_Click()
     Dim lex As VBLexLib.Tokenizer
     Set lex = New Tokenizer
     
-    lex.SourceText = "set abc = hoge(""fuga, """"moge""""!!!"")"
+    lex.SourceText = "Function hoge()" & vbCrLf & _
+                        "set abc = hoge(""fuga, """"moge""""!!!"")" & vbCrLf & _
+                        "if len(abc) > 0 then" & vbCrLf & _
+                        "  Debug.print ""abc""" & vbCrLf & _
+                        "end if" & vbCrLf & _
+                      "End Function"
+                        
     
     Debug.Print lex.SourceText
     
     Dim tk As Token
     
     For Each tk In lex.Tokens
-        Debug.Print tk.Type, tk.Text
+        
+        Debug.Print tk.Type & vbTab;
+        
+        Select Case tk.Type
+            Case TkSTRING
+                Debug.Print """" & tk.Text & """"""
+            Case Else
+                Debug.Print tk.Text
+        End Select
+        
     Next
     
     Set lex = Nothing

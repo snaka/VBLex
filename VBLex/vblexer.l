@@ -49,6 +49,26 @@ _[\ \t]*$     { return TkBLANK; }
   return TkPUNC;
 }
 
+
+(?xi:If|
+  Else|
+  ElseIf|
+  Select|
+  Do|
+  While|
+  For
+) { return TkCOND; }
+
+(?xi:End\ Sub|
+  End\ Function|
+  End\ Property
+) { return TkENDPROC; }
+
+(?xi:Sub|
+  Function|
+  Property
+) { return TkPROC; }
+
 (?xi:AppActivate|
   Beep|
   Call|
@@ -61,10 +81,7 @@ _[\ \t]*$     { return TkBLANK; }
   Deftype|
   DeleteSetting|
   Dim|
-  Do|
   Loop|
-  End\ Sub|
-  End\ Function|
   End\ If|
   End|
   Enum|
@@ -72,7 +89,6 @@ _[\ \t]*$     { return TkBLANK; }
   Event|
   Exit|
   FileCopy|
-  For|
   Each|
   In|
   Next|
@@ -84,7 +100,6 @@ _[\ \t]*$     { return TkBLANK; }
   Return|
   Goto|
   On|
-  If|
   Implements|
   Input|
   Kill|
@@ -119,7 +134,6 @@ _[\ \t]*$     { return TkBLANK; }
   SavePicture|
   SaveSetting|
   Seek|
-  Select\ Case|
   Case|
   end\ select|
   SendKeys|
@@ -131,7 +145,6 @@ _[\ \t]*$     { return TkBLANK; }
   Time|
   Type|
   Unload|
-  While|
   Wend|
   Width\ \#|
   With|
@@ -146,7 +159,6 @@ _[\ \t]*$     { return TkBLANK; }
   Else|
   Empty|
   False|
-  For|
   Friend|
   Get|
   Input|
@@ -203,3 +215,26 @@ _[\ \t]*$     { return TkBLANK; }
 . { return TkOTHER; }
 
 %%
+
+int main(void) {
+  FlexLexer* lex = new yyFlexLexer;
+  int ret;
+
+  while((ret = lex->yylex()) != 0)
+  {
+    switch(ret) {
+
+      case TkSTRING:
+        std::cout << ret << "::" << string_buff << std::endl;
+        break;
+
+      default:
+        std::cout << ret << "::" << lex->YYText() << std::endl;
+        break;
+    }
+  }
+
+  delete lex;
+}
+
+// vim: ff=dos ts=2 sw=2 et
