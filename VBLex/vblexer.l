@@ -59,6 +59,11 @@ _[\ \t]*$     { return TkBLANK; }
   For
 ) { return TkCOND; }
 
+(?xi:Exit\ Sub|
+  Exit\ Function|
+  Exit\ Property
+) { return TkEXIT; }
+
 (?xi:End\ Sub|
   End\ Function|
   End\ Property
@@ -87,7 +92,6 @@ _[\ \t]*$     { return TkBLANK; }
   Enum|
   Erase|
   Event|
-  Exit|
   FileCopy|
   Each|
   In|

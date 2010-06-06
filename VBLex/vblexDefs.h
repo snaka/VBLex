@@ -10,6 +10,7 @@ enum VBLexTokenTypes {
 	TkCOND,				// 条件分岐のステートメント
 	TkPROC,				// プロシージャの開始ステートメント
 	TkENDPROC,			// プロシージャの終了ステートメント
+	TkEXIT,				// プロシージャの中断
 	TkVB,				// cls,frmファイル内部で使用しているキーワード
 	TkIDENT,			// 識別子（変数名，プロシージャ名など）
 	TkDIGIT,			// 数字

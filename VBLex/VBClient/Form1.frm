@@ -32,6 +32,7 @@ Private Sub Command1_Click()
                         "if len(abc) > 0 then" & vbCrLf & _
                         "  Debug.print ""abc""" & vbCrLf & _
                         "end if" & vbCrLf & _
+                        "Exit function" & vbCrLf & _
                       "End Function"
                         
     
